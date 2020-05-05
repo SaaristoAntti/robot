@@ -224,6 +224,44 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 										<h2 class="colorlib-heading">First Testcase for Web</h2>
 										<p>Let's create our first testcase</p>
 										
+										<code>*** Settings ***</br>
+											Documentation     Example testcase 1: use SeleniumLibrary and Robot Framework for web page testing</br>
+											Library           SeleniumLibrary</br></br>
+											
+											*** Variables ***</br>
+											${LOGIN URL}      https://www.google.com</br>
+											${BROWSER}        Chrome</br>
+											${TITLE}          Google</br></br>
+											
+											*** Test Cases ***</br>
+											Example 1</br>
+												[Documentation]     open webpage and verify page title</br>
+												Open Browser To Search Page</br>
+												Verify Page Title</br>
+												[Teardown]          Close Browser</br></br>
+											
+											
+											*** Keywords ***</br>
+											Open Browser To Search Page</br>
+												Open Browser        ${LOGIN URL}    ${BROWSER}</br></br>
+											
+											Verify Page Title</br>
+												Title Should Be     ${TITLE}</br></br></code>
+												<p><strong>now run testcase:</strong></p>
+												<code> $ robot -d /tmp example1.robot</br>
+													==============================================================================</br>
+													Example1 :: Example testcase 1: use SeleniumLibrary and Robot Framework for...</br>
+													==============================================================================</br>
+													Example 1 :: open webpage and verify page title                       | PASS |</br>
+													------------------------------------------------------------------------------</br>
+													Example1 :: Example testcase 1: use SeleniumLibrary and Robot Fram... | PASS |</br>
+													1 critical test, 1 passed, 0 failed</br>
+													1 test total, 1 passed, 0 failed</br>
+													==============================================================================</br>
+													Output:  /tmp/output.xml</br>
+													Log:     /tmp/log.html</br>
+													Report:  /tmp/report.html</br>
+													</code>
 										<!--
 										<p><strong>Install python 3:</strong>
 										<br><code>$ brew install python3</code></p>
