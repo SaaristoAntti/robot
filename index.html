@@ -222,32 +222,19 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 									<div class="about-desc">
 										<span class="heading-meta">First Testcase</span>
 										<h2 class="colorlib-heading">First Testcase for Web</h2>
-										<p>Let's create our first testcase</p>
+										<p>Let's create our first testcase. You can get it also from <a href="testcases/example1.robot">here</a></p>
 										
-										<code>*** Settings ***</br>
-											Documentation     Example testcase 1: use SeleniumLibrary and Robot Framework for web page testing</br>
-											Library           SeleniumLibrary</br></br>
+
+										<pre class="codeblock">
+												<br>*** Settings ***<br>Documentation&emsp;&emsp;Example testcase 1: Robot Framework with SeleniumLibrary<br>Library&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;SeleniumLibrary
+												<div>*** Variables ***</br>${LOGIN URL}      https://www.google.com</br>${BROWSER}        Chrome</br>${TITLE}          Google</div>
+												<div>*** Test Cases ***</br>Example 1</br>[Documentation]     open webpage and verify page title</br>Open Browser To Search Page</br>Verify Page Title</br>[Teardown]          Close Browser</div>
+												<div>*** Keywords ***</br>Open Browser To Search Page</br>Open Browser        ${LOGIN URL}    ${BROWSER}</br></br>Verify Page Title</br>Title Should Be     ${TITLE}</div>
+										</pre>
 											
-											*** Variables ***</br>
-											${LOGIN URL}      https://www.google.com</br>
-											${BROWSER}        Chrome</br>
-											${TITLE}          Google</br></br>
-											
-											*** Test Cases ***</br>
-											Example 1</br>
-												[Documentation]     open webpage and verify page title</br>
-												Open Browser To Search Page</br>
-												Verify Page Title</br>
-												[Teardown]          Close Browser</br></br>
-											
-											
-											*** Keywords ***</br>
-											Open Browser To Search Page</br>
-												Open Browser        ${LOGIN URL}    ${BROWSER}</br></br>
-											
-											Verify Page Title</br>
-												Title Should Be     ${TITLE}</br></br></code>
-												<p><strong>now run testcase:</strong></p>
+									
+
+											<p><strong>now run testcase:</strong></p>
 												<code> $ robot -d /tmp example1.robot</br>
 													==============================================================================</br>
 													Example1 :: Example testcase 1: use SeleniumLibrary and Robot Framework for...</br>
@@ -262,22 +249,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 													Log:     /tmp/log.html</br>
 													Report:  /tmp/report.html</br>
 													</code>
-										<!--
-										<p><strong>Install python 3:</strong>
-										<br><code>$ brew install python3</code></p>
-
-										<p><strong>verify python version:</strong>
-										<br><code>$ python3 --version</code></p>
-										
-										<p><strong>Install Robot Framework:</strong>
-										<br><code>$ pip3 install robotframework</code></p>
-
-										<p><strong>Install Selenium library:</strong>
-										<br><code>$ pip3 install robotframework-seleniumlibrary</code></p>
-										
-
-										<p><strong>Install browser drivers:</strong>
-										<br><code>$ brew cask install chromedriver</code></p> -->
+									
 									</div>
 								</div>
 							</div>
