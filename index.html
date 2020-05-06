@@ -60,12 +60,14 @@
 				<h1 id="colorlib-logo"><a href="index.html">Robot Framework</a></h1>
 				<span class="position">open source automation framework</span>
 			</div>
+			<!-- 					MENU				-->
 			<nav id="colorlib-main-menu" role="navigation" class="navbar">
 				<div id="navbar" class="collapse">
 					<ul>
 						<li class="active"><a href="#" data-nav-section="home">Home</a></li>
 						<li><a href="#" data-nav-section="installation">Installation</a></li>
-						<li><a href="#" data-nav-section="testcase1">First Testcase</a></li>
+						<li><a href="#" data-nav-section="testcase1">First Web Testcase</a></li>
+						<li><a href="#" data-nav-section="restapi">REST API Example</a></li>
 						<!--<li><a href="#" data-nav-section="services">Services</a></li>
 						<li><a href="#" data-nav-section="skills">Skills</a></li>
 						<li><a href="#" data-nav-section="education">Education</a></li>
@@ -212,7 +214,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 				</div>
 			</section>
 
-			<!--	FIRST TEST CASE -->
+			<!--	FIRST WEB TEST CASE -->
 			<section class="colorlib-about" data-section="testcase1">
 				<div class="colorlib-narrow-content">
 					<div class="row">
@@ -245,6 +247,46 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 													1 critical test, 1 passed, 0 failed</br>
 													1 test total, 1 passed, 0 failed</br>
 													==============================================================================</br>
+													Output:  /tmp/output.xml</br>
+													Log:     /tmp/log.html</br>
+													Report:  /tmp/report.html</br>
+													</code>
+									
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!--	ROBOT REST API TESTING -->
+			<section class="colorlib-about" data-section="restapi">
+				<div class="colorlib-narrow-content">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
+								<div class="col-md-12">
+									<div class="about-desc">
+										<span class="heading-meta">rest api</span>
+										<h2 class="colorlib-heading">REST API Testing</h2>
+										<p>Nice - with selenium web testing is easy. Let's move to REST API testing. Example also <a href="testcases/rest.robot">here</a> First install REST library for robot. RESTinstance is great library for API testing. See <a href="https://github.com/asyrjasalo/RESTinstance/">RESTinstance documentation</a></p>
+										<code>$ pip3 install RESTinstance  &emsp;&emsp;&emsp;&emsp;# install RESTinstancerobot library </code><br><br>
+										
+
+										<pre class="codeblock">
+												<br>*** Settings ***<br>Documentation&emsp;&emsp;EXAMPLE REST testcase<br>Library&emsp;&emsp;&emsp;REST&emsp;https://jsonplaceholder.typicode.com
+												<div>*** Variables ***<br>${EXPECTED_ID}          1<br>${EXPECTED_NAME}        Leanne Graham<br>${EXPECTED_USERNAME}    Bret</div>
+												<div>*** Test Cases ***<br>GET USER VALIDATE ID, NAME AND USERNAME<br>GET             /users/1                # new instance<br>Output schema   response body           # this will print out response<br>Object          response body           # values are fully optional<br>Integer         response body id          ${EXPECTED_ID}     # verify id value<br>String          response body name        ${EXPECTED_NAME}   # verify name value<br>String          response body username    ${EXPECTED_USERNAME}   # verify username<br>
+										</pre>
+											
+									
+
+											<p><strong>now run testcase:</strong></p>
+												<code> $ robot -d /tmp rest.robot</br>
+													==============================================================================</br>
+													.<br>.<br>.<br>
+													GET USER VALIDATE ID, NAME AND USERNAME                               | PASS |<br>
 													Output:  /tmp/output.xml</br>
 													Log:     /tmp/log.html</br>
 													Report:  /tmp/report.html</br>
