@@ -68,6 +68,7 @@
 						<li><a href="#" data-nav-section="installation">Installation</a></li>
 						<li><a href="#" data-nav-section="testcase1">First Web Testcase</a></li>
 						<li><a href="#" data-nav-section="restapi">REST API Example</a></li>
+						<li><a href="#" data-nav-section="mobile">Mobile Example</a></li>
 						<!--<li><a href="#" data-nav-section="services">Services</a></li>
 						<li><a href="#" data-nav-section="skills">Skills</a></li>
 						<li><a href="#" data-nav-section="education">Education</a></li>
@@ -291,6 +292,44 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 													Log:     /tmp/log.html</br>
 													Report:  /tmp/report.html</br>
 													</code>
+									
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+
+			<!--	MOBILE TESTING -->
+			<section class="colorlib-about" data-section="mobile">
+				<div class="colorlib-narrow-content">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
+								<div class="col-md-12">
+									<div class="about-desc">
+										<span class="heading-meta">mobile</span>
+										<h2 class="colorlib-heading">Mobile (Android) Testing</h2>
+										<p>With Robot Framework and <a href="http://appium.io/">Appium</a> you can test iOS and Android mobile applications. Install Appium and <a href="https://github.com/serhatbolsu/robotframework-appiumlibrary">appium</a> library for robot<br>
+										<code>$ npm install -g appium<br></code>
+										<code>$ pip3 install robotframework-appiumlibrary</code>
+										<p>Connect Android device and start appium service:</p>
+										<code>$ appium</code>
+										
+
+										<pre class="codeblock">
+												<br>*** Settings ***<br>Library&emsp;&emsp;AppiumLibrary<br>
+												<div>*** Test Cases ***<br>Open Application On Android Device<br>&emsp;&emsp;Open Application     http://localhost:4723     udid=< your deviceid here > platformName=Android     deviceName=AndroidDevice     app=app.example.com    appActivity= com.example.com.MainActivity</div>
+												<div>&emsp;&emsp;[Teardown]     Close Application</div>
+										</pre>
+											
+									
+
+											<p><strong>now run testcase:</strong></p>
+												<code> $ robot -d /tmp mobile.robot</br></code>
+											<p>This example just launches and closes application (app.example.com) on mobile device</p>
 									
 									</div>
 								</div>
