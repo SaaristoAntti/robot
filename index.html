@@ -283,10 +283,11 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 												<div>*** Variables ***<br>${EXPECTED_ID}          1<br>${EXPECTED_NAME}        Leanne Graham<br>${EXPECTED_USERNAME}    Bret</div>
 												<div>*** Test Cases ***<br>GET USER VALIDATE ID, NAME AND USERNAME<br>GET             /users/1                # new instance<br>Output schema   response body           # this will print out response<br>Object          response body           # values are fully optional<br>Integer         response body id          ${EXPECTED_ID}     # verify id value<br>String          response body name        ${EXPECTED_NAME}   # verify name value<br>String          response body username    ${EXPECTED_USERNAME}   # verify username<br>
 										</pre>
-											
-									
+										<p><strong>execute testcase:</strong></p>
+												<code> $ robot -d /tmp rest.robot</br><br></code>
 
-											<p><strong>execute testcase:</strong></p>
+										<img class="outcome-img" src="images/robot_rest_outcome.png" alt="robot rest api test output">
+											<!--<p><strong>execute testcase:</strong></p>
 												<code> $ robot -d /tmp rest.robot</br>
 													==============================================================================</br>
 													.<br>.<br>.<br>
@@ -294,8 +295,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 													Output:  /tmp/output.xml</br>
 													Log:     /tmp/log.html</br>
 													Report:  /tmp/report.html</br>
-													</code>
-									<p><br>On this testcase we GET REST api (https://jsonplaceholder.typicode.com). Testcase validates id,name and username values.</p>
+													</code>-->
+									<p><br>REST api testcase: GET REST api (https://jsonplaceholder.typicode.com) and validate id,name and username values. Testcase passed.</p>
 									</div>
 								</div>
 							</div>
@@ -331,7 +332,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
 											<p><strong>now run testcase:</strong></p>
 												<code> $ robot -d /tmp mobile.robot</br></code>
-											<p><br>This example just launches and closes application (app.example.com) on mobile device.</p>
+											<p><br>Mobile eexample testcase launches and closes application (app.example.com) on mobile device.</p>
 									
 									</div>
 								</div>

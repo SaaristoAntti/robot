@@ -926,6 +926,9 @@ body.offcanvas {
     .work-menu span a.active {
       color: #2c98f0; }
 
+.outcome-img {
+  width: 100%;
+}
 .project {
   background-size: cover;
   background-position: center center;
