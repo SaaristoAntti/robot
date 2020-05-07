@@ -224,9 +224,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 							<div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
 								<div class="col-md-12">
 									<div class="about-desc">
-										<span class="heading-meta">First Testcase</span>
+										<span class="heading-meta">Web Testing</span>
 										<h2 class="colorlib-heading">First Testcase for Web</h2>
-										<p>Let's create simple testcase for web testing. You can get it also from <a href="testcases/example1.robot">here</a></p>
+										<p>Let's create simple testcase for web testing. You can get it also from <a href="testcases/web.robot">here</a></p>
 										
 
 										<pre class="codeblock">
@@ -238,7 +238,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 											
 									
 
-											<p><strong>now run testcase:</strong></p>
+											<p><strong>execute testcase:</strong></p>
 												<code> $ robot -d /tmp example1.robot</br>
 													==============================================================================</br>
 													Example1 :: Example testcase 1: use SeleniumLibrary and Robot Framework for...</br>
@@ -286,7 +286,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 											
 									
 
-											<p><strong>now run testcase:</strong></p>
+											<p><strong>execute testcase:</strong></p>
 												<code> $ robot -d /tmp rest.robot</br>
 													==============================================================================</br>
 													.<br>.<br>.<br>
@@ -321,9 +321,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 										<p>Connect Android device and start appium service:</p>
 										<code>$ appium</code>
 										
-
 										<pre class="codeblock">
-												<br>*** Settings ***<br>Library&emsp;&emsp;AppiumLibrary<br>
+												<br># Example Robot Framework code for mobile<br>*** Settings ***<br>Library&emsp;&emsp;AppiumLibrary<br>
 												<div>*** Test Cases ***<br>Open Application On Android Device<br>&emsp;&emsp;Open Application     http://localhost:4723     udid=< your deviceid here > platformName=Android     deviceName=AndroidDevice     app=app.example.com    appActivity= com.example.com.MainActivity</div>
 												<div>&emsp;&emsp;[Teardown]     Close Application</div>
 										</pre>
@@ -332,7 +331,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
 											<p><strong>now run testcase:</strong></p>
 												<code> $ robot -d /tmp mobile.robot</br></code>
-											<p><br>This example just launches and closes application (app.example.com) on mobile device</p>
+											<p><br>This example just launches and closes application (app.example.com) on mobile device.</p>
 									
 									</div>
 								</div>
