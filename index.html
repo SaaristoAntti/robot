@@ -391,17 +391,15 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 										<p>With Robot Framework and <a href="https://github.com/MarketSquare/robotframework-requests">RequestsLibrary</a> you can utilize HTTP client with keywords. <a href="testcases/requests.robot">example here </a>. Install required library with pip:<br>
 										<code>$ pip3 install robotframework-requests<br></code>
 										
-										<!--
+										
 										<pre class="codeblock">
-											<br>*** Settings ***
-											<div>Library     DatabaseLibrary</div>
-											<div>*** Variables ***<br>${DBNAME}       customers<br>${DBUSER}       root<br>${DBPASSWD}     example<br>${DBHOST}       localhost<br>${DBPORT}       3306<br>${DBTABLE}      customer<br>${DBMODULE}     pymysql<br>@{QUERY RESULTS}</div>
-											<div>*** Test Cases ***<br>Verify Table On Database<br>&emsp;Connect To Database  ${DBMODULE}     ${DBNAME}   ${DBUSER}   ${DBPASSWD}     ${DBHOST}   ${DBPORT}<br>&emsp;Table Must Exist    ${DBTABLE}<br>&emsp;Check If Exists In Database     SELECT * FROM ${DBTABLE}<br>&emsp;@{queryResults}     Query       SELECT * FROM ${DBTABLE}<br>&emsp;Log to console    @{QUERY RESULTS}[0]</div>
-										</pre>-->
+											<br>*** Settings ***<br>Library               Collections<br>Library               RequestsLibrary<br>
+											<div>*** Test Cases ***<br>&emsp;Get Requests      Create Session    github         http://api.github.com<br>&emsp;${resp}=          Get Request    github               /users/saaristoantti<br>&emsp;Request Should Be Successful     ${resp}<br>&emsp;Status Should Be  200            ${resp}<br>&emsp;Dictionary Should Contain Value  ${resp.json()}       SaaristoAntti<br></div>
+										</pre>
 
 										<p><strong>excute testcase:</strong></p>
 										<code> $ robot -d /tmp requests.robot</br></code>
-										<!--<p>Test connects to database, verifies customer table and queries data</p>-->
+										<p>Test executest get request to api.github, verifies that connection succeeded and response contains text SaaristoAntti</p>
 									
 									</div>
 								</div>
