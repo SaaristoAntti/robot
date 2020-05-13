@@ -2,6 +2,7 @@
 Documentation     Login to webpage
 
 Library           SeleniumLibrary
+#Library           lib/StaticSeleniumLibrary
 Resource          resources/general.robot
 
 *** Variables ***
@@ -11,7 +12,7 @@ ${TITLE}            login testpage
 ${USERNAME}         user
 ${PASSWORD}         password
 
-
+# https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html
 *** Test Cases ***
 Login example
     [Documentation]     open webpage and verify page title
@@ -19,6 +20,7 @@ Login example
     Verify Page Title
     Input Username And Password With Id
     Validate Login
+    Input text
     [Teardown]          Close Browser
 
 Login example With CSS
