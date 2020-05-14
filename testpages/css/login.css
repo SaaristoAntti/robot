@@ -76,3 +76,15 @@ outline:none;
 input[type=button]:hover{
 background: linear-gradient(#ffdd7f 5%, #ffbc00 100%);
 }
+.resetclass{ 
+    font-size: 16px;
+    background: linear-gradient(#EBE6E4 5%, #EBE6E4 100%);
+    border: 1px solid #A1A0A0;
+    color: #4E4D4B;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+    padding: 10px 0;
+    outline:none;
+    }

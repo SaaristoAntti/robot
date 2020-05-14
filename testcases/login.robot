@@ -46,6 +46,9 @@ Input Username And Password With Xpath
     Wait Until Element Is Visible   xpath=//*[@class='usernameclass']
     Input Text                      xpath=//*[@class='usernameclass']     ${USERNAME}
     Input Text                      xpath=//*[@class='passwordclass']     ${PASSWORD}
+    Click Button                    xpath=//*[contains(@name,'res')]
+    Input Text                      //input[contains(@name,'userna')]       ${USERNAME}
+    Input Text                      //input[contains(@name,'passw')]        ${PASSWORD}
     Click Button                    //input[@value='Login']
 
 Input Username And Password With Id
