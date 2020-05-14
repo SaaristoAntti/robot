@@ -6,7 +6,8 @@ Library           SeleniumLibrary
 Resource          resources/general.robot
 
 *** Variables ***
-${LOGIN URL}        http://127.0.0.1:5500/login.html
+#${LOGIN URL}        http://127.0.0.1:5500/login.html
+${LOGIN URL}        https://saaristoantti.github.io/robot/testpages/login.html
 ${BROWSER}          Chrome
 ${TITLE}            login testpage
 ${USERNAME}         user
@@ -15,16 +16,16 @@ ${PASSWORD}         password
 # https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html
 *** Test Cases ***
 Login example
-    [Documentation]     open webpage and verify page title
+    [Documentation]     input username and password with id selectors
+    [Tags]  id
     Open Login Page
     Verify Page Title
     Input Username And Password With Id
     Validate Login
-    Input text
     [Teardown]          Close Browser
 
 Login example With CSS
-    [Documentation]     open webpage and verify page title
+    [Documentation]     input username and password with css selectors
     [Tags]  css
     Open Login Page
     Verify Page Title
@@ -32,7 +33,21 @@ Login example With CSS
     Validate Login
     [Teardown]          Close Browser
 
+Login Example With Xpath
+    [Documentation]     input username and password with xpath selectors
+    [Tags]  xpath
+    Open Login Page
+    Input Username And Password With Xpath
+    Validate Login
+    [Teardown]          Close Browser
+
 *** Keywords ***
+Input Username And Password With Xpath
+    Wait Until Element Is Visible   xpath=//*[@class='usernameclass']
+    Input Text                      xpath=//*[@class='usernameclass']     ${USERNAME}
+    Input Text                      xpath=//*[@class='passwordclass']     ${PASSWORD}
+    Click Button                    //input[@value='Login']
+
 Input Username And Password With Id
     Wait Until Element Is Visible   id=password
     Input Text                      id=username     ${USERNAME}
