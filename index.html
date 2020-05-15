@@ -67,6 +67,7 @@
 						<li class="active"><a href="#" data-nav-section="home">Home</a></li>
 						<li><a href="#" data-nav-section="installation">Installation</a></li>
 						<li><a href="#" data-nav-section="testcase1">Web Example</a></li>
+						<li><a href="#" data-nav-section="locators">Selenium Locators</a></li>
 						<li><a href="#" data-nav-section="restapi">REST API Example</a></li>
 						<li><a href="#" data-nav-section="mobile">Mobile Example</a></li>
 						<li><a href="#" data-nav-section="database">Database Example</a></li>
@@ -257,6 +258,45 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 													</code>
 										
 													<p><br>On testcase we launch browser (chrome) on https://www.google.com and verify that page title is Google</p>
+									
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			
+			<!--	LOCATORS -->
+			<section class="colorlib-about" data-section="locators">
+				<div class="colorlib-narrow-content">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
+								<div class="col-md-12">
+									<div class="about-desc">
+										<span class="heading-meta">Locators</span>
+										<h2 class="colorlib-heading">Robot And Selenium Locators</h2>
+										<p><a href="https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html">SeleniumLibrary</a> uses the Selenium WebDriver modules internally to control a web browser. All keywords in SeleniumLibrary that need to interact with an element on a web page take an argument typically named locators that specifies how to find the element. SeleniumLibrary supports finding elements based on the element id, XPath expressions, or CSS selectors</p>
+										<p>Few examples below or see this <a href="testcases/login.robot">testcase</a></p>
+										
+										<pre class="codeblock">
+											<br>Input Text&emsp;&emsp;username&emsp;&emsp;${USERNAME}&emsp;&emsp;# locator with id called usernamr
+										</pre>
+										<pre class="codeblock">
+											<br>Input Text&emsp;&emsp;class=usernameclass&emsp;&emsp;${USERNAME}&emsp;&emsp;# locator with class name usernameclass
+										</pre>
+										<pre class="codeblock">
+											<br>Input Text&emsp;&emsp;//*[@class='usernameclass']&emsp;&emsp;${USERNAME}&emsp;&emsp;# locator with xpath, use class
+										</pre>
+										<pre class="codeblock">
+											<br>Input Text&emsp;&emsp;//input[contains(@name,'passw')]&emsp;&emsp;${USERNAME}&emsp;&emsp;# xpath locator with partial name
+										</pre>
+										<pre class="codeblock">
+											<br>Click Button&emsp;&emsp;	//*[@type='submit' or @name='reset']&emsp;&emsp;${USERNAME}<br># xpath identifies the elements whose single or both conditions are true 
+										</pre>
+
+									
 									
 									</div>
 								</div>

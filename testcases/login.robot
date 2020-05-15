@@ -1,9 +1,10 @@
 *** Settings ***
 Documentation     Login to webpage
 
-Library           SeleniumLibrary
-#Library           lib/StaticSeleniumLibrary
-Resource          resources/general.robot
+Library             SeleniumLibrary
+#Library            lib/StaticSeleniumLibrary
+Resource            resources/general.robot
+Suite Teardown      Close All Browsers
 
 *** Variables ***
 #${LOGIN URL}        http://127.0.0.1:5500/login.html
@@ -22,7 +23,6 @@ Login example
     Verify Page Title
     Input Username And Password With Id
     Validate Login
-    [Teardown]          Close Browser
 
 Login example With CSS
     [Documentation]     input username and password with css selectors
@@ -31,7 +31,6 @@ Login example With CSS
     Verify Page Title
     Input Username And Password With CSS
     Validate Login
-    [Teardown]          Close Browser
 
 Login Example With Xpath
     [Documentation]     input username and password with xpath selectors
@@ -39,7 +38,7 @@ Login Example With Xpath
     Open Login Page
     Input Username And Password With Xpath
     Validate Login
-    [Teardown]          Close Browser
+
 
 *** Keywords ***
 Input Username And Password With Xpath
@@ -53,8 +52,8 @@ Input Username And Password With Xpath
 
 Input Username And Password With Id
     Wait Until Element Is Visible   id=password
-    Input Text                      id=username     ${USERNAME}
-    Input Text                      id=password     ${PASSWORD}
+    Input Text                      username     ${USERNAME}
+    Input Text                      password     ${PASSWORD}
     Click Button                    id=submit
 
 Input Username And Password With CSS
