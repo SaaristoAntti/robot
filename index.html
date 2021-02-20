@@ -175,7 +175,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 										<br><code>$ brew install --cask chromedriver</code></p>
 
 										<p> if you are using MAC and you get error: "chromedriver cannot be opened because the developer cannot be verified"</p>
-										<p><strong>Allow exection:</strong>
+										<p><strong>Allow execution:</strong>
 										<br><code>$ cd /usr/local/Caskroom/chromedriver/&lt;version&gt;/ && xattr -d com.apple.quarantine chromedriver</code></p>
 									</div>
 								</div>
@@ -344,7 +344,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 													Log:     /tmp/log.html</br>
 													Report:  /tmp/report.html</br>
 													</code>-->
-									<p><br>REST api testcase: GET REST api (https://jsonplaceholder.typicode.com) and validate id,name and username values. Testcase passed.</p>
+									<p><br>REST api testcase: GET REST api (https://jsonplaceholder.typicode.com) and validate id, name and username values. Testcase passed.</p>
 									</div>
 								</div>
 							</div>
@@ -412,7 +412,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 											<div>*** Test Cases ***<br>Verify Table On Database<br>&emsp;Connect To Database  ${DBMODULE}     ${DBNAME}   ${DBUSER}   ${DBPASSWD}     ${DBHOST}   ${DBPORT}<br>&emsp;Table Must Exist    ${DBTABLE}<br>&emsp;Check If Exists In Database     SELECT * FROM ${DBTABLE}<br>&emsp;@{queryResults}     Query       SELECT * FROM ${DBTABLE}<br>&emsp;Log to console    @{QUERY RESULTS}[0]</div>
 										</pre>
 
-										<p><strong>now run testcase:</strong></p>
+										<p><strong>now execute testcase:</strong></p>
 										<code> $ robot -d /tmp db.robot</br></code>
 										<p>Test connects to database, verifies customer table and queries data</p>
 									
@@ -443,11 +443,11 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 											<div>*** Test Cases ***<br>&emsp;Get Requests      Create Session    github         http://api.github.com<br>&emsp;${resp}=          Get Request    github               /users/saaristoantti<br>&emsp;Request Should Be Successful     ${resp}<br>&emsp;Status Should Be  200            ${resp}<br>&emsp;Dictionary Should Contain Value  ${resp.json()}       SaaristoAntti<br></div>
 										</pre>
 
-										<p><strong>excute testcase:</strong></p>
+										<p><strong>execute testcase:</strong></p>
 										<code> $ robot -d /tmp requests.robot</br></code>
 
 										<img class="outcome-img" src="images/requests.gif" alt="robot request test gif">
-										<p>Test executest get request to api.github, verifies that connection succeeded and response contains text SaaristoAntti</p>
+										<p>Test executes GET request to api.github, verifies that connection succeeded and response contains text SaaristoAntti</p>
 									
 									</div>
 								</div>
