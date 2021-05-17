@@ -434,19 +434,22 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 									<div class="about-desc">
 										<span class="heading-meta">requests</span>
 										<h2 class="colorlib-heading">Requests HTTP Client</h2>
-										<p>With Robot Framework and <a href="https://github.com/MarketSquare/robotframework-requests">RequestsLibrary</a> you can utilize HTTP client with keywords. <a href="testcases/requests.robot">example here </a>. Install required library with pip:<br>
-										<code>$ pip3 install robotframework-requests<br></code>
+										<p>With Robot Framework and <a href="https://github.com/MarketSquare/robotframework-requests">RequestsLibrary</a> you can utilize HTTP client with keywords.  Install required library with pip:<br>
+										<code>$ python3 -m pip install robotframework-requests<br></code>
 										
-										
-										<pre class="codeblock">
+										<p><strong>example code:</strong></p>
+										<script src="https://gist.github.com/SaaristoAntti/2667e41ec2cd40efc0498c5fafc31fe8.js"></script>
+										<!--	this was for older version 
+											<pre class="codeblock">
+											
 											<br>*** Settings ***<br>Library               Collections<br>Library               RequestsLibrary<br>
 											<div>*** Test Cases ***<br>&emsp;Get Requests      Create Session    github         http://api.github.com<br>&emsp;${resp}=          Get Request    github               /users/saaristoantti<br>&emsp;Request Should Be Successful     ${resp}<br>&emsp;Status Should Be  200            ${resp}<br>&emsp;Dictionary Should Contain Value  ${resp.json()}       SaaristoAntti<br></div>
-										</pre>
+										</pre>-->
 
 										<p><strong>execute testcase:</strong></p>
 										<code> $ robot -d /tmp requests.robot</br></code>
 
-										<img class="outcome-img" src="images/requests.gif" alt="robot request test gif">
+										<!--<img class="outcome-img" src="images/requests.gif" alt="robot request test gif"> -->
 										<p>Test executes GET request to api.github, verifies that connection succeeded and response contains text SaaristoAntti</p>
 									
 									</div>
