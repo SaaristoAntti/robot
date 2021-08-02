@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -154,8 +154,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 										<h2 class="colorlib-heading">How to setup Robot Framework</h2>
 										<p>Robot Framework is a generic open source automation framework. 
 											It can be used for test automation and robotic process automation (RPA).
-										Install Robot Framework to (MAC OS) with following steps:	</p>
-
+										</p>
+										<h3>Robot Framework installation on macOS</h3>
 										<p><strong>Install python 3:</strong>
 										<br><code>$ brew install python3</code></p>
 
@@ -176,7 +176,19 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
 										<p> if you are using MAC and you get error: "chromedriver cannot be opened because the developer cannot be verified"</p>
 										<p><strong>Allow execution:</strong>
-										<br><code>$ cd /usr/local/Caskroom/chromedriver/&lt;version&gt;/ && xattr -d com.apple.quarantine chromedriver</code></p>
+										<br><code>$ cd /usr/local/Caskroom/chromedriver/&lt;version&gt;/ && xattr -d com.apple.quarantine chromedriver</code></p><br>
+										<h3>Windows installation</h3>
+
+										<p><strong>Install python3:</strong></br>
+											Download and install python 3 software from <a href="https://www.python.org/downloads/">python website</a> Check "Add Python to PATH" during installation</p>
+
+										<p><strong>Check python and pip installation from command line:</strong><br><code>> python --version && pip --version</code></p>
+
+										<p><strong>Install robot framework:</strong>
+											<br><code> > pip install robotframework</code></p>
+
+										<p><strong>Check robot framework installation:</strong>
+											<br><code> > robot --version</code></p>
 									</div>
 								</div>
 							</div>
